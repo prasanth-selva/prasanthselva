@@ -1,0 +1,74 @@
+.certificates {
+    padding: 80px 5%;
+    background: #101820;
+    color: #00FF00; /* Hacker green */
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace; /* Hacker-esque font */
+}
+
+.section-title {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    background: linear-gradient(45deg, #00FF00, #39FF14); /* Hacker green gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.certificate-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.certificate-item {
+    background: #1d2733;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certificate-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.2); /* Glowing hover effect */
+}
+
+.certificate-item img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.certificate-item img:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+}
+
+.certificate-item p {
+    font-size: 18px;
+    color: #00FF00; /* Hacker green text */
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 10px 25px;
+    background: linear-gradient(45deg, #00FF00, #39FF14);
+    color: #101820;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.download-btn:hover {
+    filter: brightness(1.2);
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3); /* Glowing effect on hover */
+}
