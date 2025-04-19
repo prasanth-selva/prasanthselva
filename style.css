@@ -12,22 +12,24 @@ body {
     color: #d1ffe0;
 }
 
+/* Header */
 .header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 10%;
+    padding: 20px 5%;
     background: transparent;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+    flex-wrap: wrap;
 }
 
 .logo {
     font-size: 25px;
-    color: #00ff88;  /* Green neon glow */
+    color: #00ff88;
     text-decoration: none;
     font-weight: 600;
     pointer-events: none;
@@ -38,47 +40,51 @@ body {
     color: white;
     text-decoration: none;
     font-weight: 500;
-    margin-left: 35px;
+    margin-left: 25px;
     transition: color 0.3s;
 }
 
 .navbar a.active,
 .navbar a:hover {
-    color: #00ff88;  /* Green neon hover */
+    color: #00ff88;
 }
 
+/* Home Section */
 .home {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    padding: 70px 10% 0;
-    background: #101820;  /* Darker background for hacker lobby vibe */
+    padding: 120px 5% 40px;
+    background: #101820;
+    text-align: center;
 }
 
 .home-content {
-    max-width: 550px;
+    max-width: 600px;
+    margin-bottom: 40px;
 }
 
 .home-content h1 {
-    font-size: 56px;
+    font-size: 36px;
     font-weight: 700;
     line-height: 1.2;
-    color: #00ff88;  /* Green neon for the main heading */
+    color: #00ff88;
     text-shadow: 0 0 15px #00ff88;
 }
 
 .home-content h3 {
-    font-size: 32px;
+    font-size: 24px;
     font-weight: 700;
-    color: #00ff88;  /* Green neon subheading */
+    color: #00ff88;
 }
 
 .home-content p {
     font-size: 16px;
-    margin: 20px 0 40px;
-    color: #d1ffe0;  /* Lighter text for readability */
+    margin: 20px 0 30px;
+    color: #d1ffe0;
     text-shadow: 0 0 10px #00ff88;
 }
 
@@ -89,10 +95,10 @@ body {
     align-items: center;
     width: 180px;
     height: 48px;
-    background: #00ff88;  /* Green neon background */
+    background: #00ff88;
     border-radius: 40px;
     font-size: 18px;
-    color: #0c1022;  /* Dark text */
+    color: #0c1022;
     text-decoration: none;
     font-weight: 600;
     letter-spacing: 1px;
@@ -107,7 +113,7 @@ body {
     position: absolute;
     inset: 0;
     border-radius: 40px;
-    background: linear-gradient(90deg, #00ff88, #00c9ff);  /* Green to blue neon glow */
+    background: linear-gradient(90deg, #00ff88, #00c9ff);
     z-index: -1;
     transition: 0.5s;
 }
@@ -124,13 +130,15 @@ body {
     color: white;
 }
 
+/* Social Icons */
 .home-sci {
-    position: absolute;
+    position: fixed;
     top: 50%;
-    left: 5%;
+    left: 20px;
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
+    z-index: 99;
 }
 
 .home-sci a {
@@ -141,7 +149,7 @@ body {
     height: 40px;
     margin: 15px 0;
     color: #0c1022;
-    background: linear-gradient(45deg, #00ff88, #00c9ff);  /* Green to blue gradient */
+    background: linear-gradient(45deg, #00ff88, #00c9ff);
     border-radius: 50%;
     text-decoration: none;
     transition: 0.4s;
@@ -149,12 +157,13 @@ body {
 
 .home-sci a:hover {
     transform: scale(1.2);
-    box-shadow: 0 0 12px #00ff88;  /* Glowing effect on hover */
+    box-shadow: 0 0 12px #00ff88;
 }
 
+/* Profile Image */
 .home-img {
-    width: 410px;
-    height: 410px;
+    width: 300px;
+    height: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -167,7 +176,7 @@ body {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background: linear-gradient(45deg, #00ff88, #00c9ff);  /* Glowing green-blue gradient */
+    background: linear-gradient(45deg, #00ff88, #00c9ff);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -212,5 +221,84 @@ body {
     100% {
         transform: scale(1);
         opacity: 1;
+    }
+}
+
+/* ========================= */
+/*      RESPONSIVENESS      */
+/* ========================= */
+
+/* Tablet & Desktop */
+@media (min-width: 768px) {
+    .home {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
+
+    .home-content {
+        flex: 1;
+        margin-bottom: 0;
+    }
+
+    .home-img {
+        flex: 1;
+        max-width: 410px;
+        height: 410px;
+    }
+
+    .home-content h1 {
+        font-size: 56px;
+    }
+
+    .home-content h3 {
+        font-size: 32px;
+    }
+
+    .home-content p {
+        font-size: 16px;
+    }
+}
+
+/* Small screens */
+@media (max-width: 480px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+    }
+
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .home-sci {
+        position: static;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .home-img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .home-content h1 {
+        font-size: 28px;
+    }
+
+    .home-content h3 {
+        font-size: 18px;
+    }
+
+    .btn {
+        width: 100%;
+        margin: 10px 0;
     }
 }
